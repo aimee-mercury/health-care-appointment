@@ -1,0 +1,55 @@
+
+
+.feedback {
+  background-color: rgba(245, 245, 245, 0.675);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.feedback-content {
+  display: flex;
+  align-items: center;
+}
+
+.patient-info {
+  margin-right: 20px;
+}
+
+.patient-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+blockquote {
+  font-style: italic;
+  color: #1b1919;
+  border-left: 4px solid #ddd;
+  padding-left: 10px;
+  margin: 0;
+}
+#animatedH4 {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, color 1s linear;
+}
+form{
+  border: 5px solid grey;
+  padding: 60px;
+  transition: all ease .50s;
+  background: var(--bg-color);
+  border-radius: 0.8rem;
+  
+ }
+ @keyframes colorCycle {
+     0% { border-color: rgb(255, 0, 200); }
+     20% { border-color: rgb(191, 255, 0); }
+     40% { border-color: lightgreen; }
+     60% { border-color: white; }
+     80% { border-color: orange; }
+     100% { border-color: rgb(0, 217, 255); }
+ }
+ 

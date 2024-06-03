@@ -1,0 +1,112 @@
+#im{
+  border-radius: 100px;
+  border: 2px solid transparent;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrapper {
+    
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-right: 20px; 
+}
+
+
+.app{
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #a5b4b9, #d0d0d7);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  color: rgb(0, 0, 0);
+}
+
+#kazu {
+  font-size: 2.5em;
+}
+
+#kk {
+  color: #a31701;
+}
+
+.categories, .healthcare-programs, .diabetics-care, .feedback {
+  margin-bottom: 40px;
+}
+
+.diabetics-care .programs {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.diabetics-care .program {
+  border: 1px solid #ddd;
+  padding: 20px;
+  flex: 1 1 200px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(223, 243, 242, 0.819);
+}
+
+.diabetics-care .program .icon {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.diabetics-care .program p, .diabetics-care .program ul {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.diabetics-care .program ul {
+  list-style: none;
+}
+
+.diabetics-care .cost-book {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.diabetics-care .program button {
+  background-color:  #00012f;;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.diabetics-care .program button:hover {
+  background-color: #380000ce;
+  color:rgb(255, 247, 247);
+}
+
+.feedback blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #ddd;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.feedback footer {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 0.9em;
+  color: #999;
+}

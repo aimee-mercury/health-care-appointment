@@ -1,0 +1,100 @@
+.footer-container {
+  
+    background: url('../assets/hospital.jpg') no-repeat center center;
+    background-size: cover;
+  
+  }
+  .sec{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffeeee87;
+    color: #121212;
+    font-family: 'Manrope', sans-serif;
+  }
+  .footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+  }
+  
+  .footer-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #10217D;
+    margin-bottom: 12px;
+  }
+  #im{
+    height: 100px;
+    border-radius:50px;
+    width: 100px;
+  }
+  .footer-section h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: #090045;
+    margin-bottom: 16px;
+  }
+  
+  .footer-description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+    width: 429px;
+    color: #121212;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section li {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+    margin-bottom: 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icons a {
+    width: 24px;
+    height: 24px;
+    color: #121212;
+  }
+  
+  .footer-line {
+    width: 100%;
+    height: 1px;
+    background: #DBDDE0;
+    margin: 20px 0;
+  }
+  
+  .footer-copyright {
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+    color: #121212;
+  }
+  
+  .footer-copyright p {
+    margin: 0;
+  }
+  
+  .footer-copyright .copyright-icon {
+    vertical-align: middle;
+  }
+  
