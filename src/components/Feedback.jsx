@@ -61,16 +61,16 @@ function Feedback() {
       <form id="messageForm">
         <h1>LEAVE MESSAGE HERE 📖</h1>
         <br />
-        <br />
-        NAMES:<br /><br />
+       
+        NAMES:<br />
         <input type="text" id="nameInput" placeholder="Your full name" style={{ width: '400px', height: '30px', color: 'black', padding: '10px' }} required /><br /><br />
-        EMAIL:<br /><br />
+        EMAIL:<br />
         <input type="text" id="emailInput" placeholder="Your email" style={{ width: '400px', height: '30px', color: 'black', padding: '10px' }} required /><br /><br />
-        Message:<br /><br />
-        <input type="text" id="messageInput" placeholder="Enter your message ...." style={{ width: '400px', height: '100px', color: 'black', padding: '10px' }} required />
-        <br />
-        <br />
-        <button style={{ border: 'none', color: 'white', backgroundColor: 'darkblue', marginLeft: '100px', color: '#fefbfb', padding: '10px', borderRadius: '15px' }} id="sendButton">SEND</button>
+        Message:<br />
+        <input type="text" id="messageInput" placeholder="Enter your message ...." style={{ width: '400px', height: '100px', color: 'black', padding: '10px',marginBottom:'30px' }} required />
+       
+       
+        <button style={{ border: 'none', marginLeft: '100px', color: '#fefbfb', padding: '10px', borderRadius: '15px' }} id="sendButton">SEND</button>
       </form>
     </section>
   );
