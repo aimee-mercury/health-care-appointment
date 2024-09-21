@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUser, FaLock } from 'react-icons/fa';
-import image from '../assets/logo.png';
-import './lg.css';
-import Navigation from '../components/Navigation';
-import Footer from '../Footer/Footer';
+import image from '../assets/logo.png';  // Ensure the path to the logo image is correct
+import './lg.css';  // Check if lg.css exists and is correctly applied
+import Navigation from '../components/Navigation';  // Ensure this path is correct
+import Footer from '../Footer/Footer';  // Ensure this path is correct
 
 const Logen = () => {
   const [borderColor, setBorderColor] = useState('red');
@@ -16,6 +16,7 @@ const Logen = () => {
 
   const navigate = useNavigate();
 
+  // Border color change animation
   useEffect(() => {
     const colors = ['red', 'darkblue', 'blue', 'yellow'];
     let index = 0;
@@ -28,18 +29,20 @@ const Logen = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Form submission handling
   const handleSubmit = (e) => {
     e.preventDefault();
     const { username, password } = formData;
 
-    // Placeholder for actual login logic
+    // Basic username and password check (replace with actual authentication)
     if (username === 'user' && password === 'pass') {
-      navigate('/H'); 
+      navigate('/H');  // Change this route to the actual one for your app
     } else {
       setError('Invalid username or password');
     }
@@ -47,12 +50,12 @@ const Logen = () => {
 
   return (
     <>
-      <Navigation />
+      <Navigation />  {/* Ensure this component renders correctly */}
       <div className="login-container">
         <img id="im" src={image} alt="Logo" />
         <form className="login-form" onSubmit={handleSubmit} style={{ borderColor: borderColor }}>
           <h2>Login to continue on our website</h2>
-          {error && <p className="error">{error}</p>}
+          {error && <p className="error">{error}</p>}  {/* Display error if any */}
           <div className="input-group">
             <FaUser className="icon" />
             <input
@@ -78,7 +81,7 @@ const Logen = () => {
           <button type="submit">Login</button>
         </form>
       </div>
-      <Footer />
+      <Footer />  {/* Ensure Footer component renders correctly */}
     </>
   );
 };

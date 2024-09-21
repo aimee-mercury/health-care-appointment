@@ -70,38 +70,37 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    // Navigate to home page after form submission
-    navigate('/Dashboard');
+    navigate('/Dashboard'); // Ensure that the '/Dashboard' route is defined in your router
   };
 
   return (
     <>
       <Navigation />
-      <form className='fm' onSubmit={handleSubmit}>
+      <form className="fm" onSubmit={handleSubmit}>
         <h2>Personal Information</h2>
         <label>
           Name:
-          <input type="text" name="name" value={formData.name} onChange={handleChange} />
+          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
         </label>
         <label>
           Address:
-          <input type="text" name="address" value={formData.address} onChange={handleChange} />
+          <input type="text" name="address" value={formData.address} onChange={handleChange} required />
         </label>
         <label>
           Phone:
-          <input type="text" name="phone" value={formData.phone} onChange={handleChange} />
+          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
         </label>
         <label>
           Date:
-          <input type="date" name="date" value={formData.date} onChange={handleChange} />
+          <input type="date" name="date" value={formData.date} onChange={handleChange} required />
         </label>
         <label>
           Emergency Contact:
-          <input type="text" name="emergencyContact" value={formData.emergencyContact} onChange={handleChange} />
+          <input type="text" name="emergencyContact" value={formData.emergencyContact} onChange={handleChange} required />
         </label>
         <label>
           Doctor:
-          <input type="text" name="therapist" value={formData.therapist} onChange={handleChange} />
+          <input type="text" name="therapist" value={formData.therapist} onChange={handleChange} required />
         </label>
 
         <h2>Please mark any of the following conditions you may currently have.</h2>
@@ -119,13 +118,19 @@ const Form = () => {
 
         <label>
           Others, please specify:
-          <input type="text" name="others" value={formData.conditions.others} onChange={handleChange} />
+          <input
+            type="text"
+            name="others"
+            value={formData.conditions.others}
+            onChange={handleChange}
+            placeholder="If other, please specify"
+          />
         </label>
 
         <h2>Please answer the questions below.</h2>
         <label>
           How did you learn about us?
-          <input type="text" name="referralSource" value={formData.referralSource} onChange={handleChange} />
+          <input type="text" name="referralSource" value={formData.referralSource} onChange={handleChange} required />
         </label>
         <label>
           Have you received massage therapy or bodywork before?
@@ -166,22 +171,33 @@ const Form = () => {
             </label>
           </div>
         </label>
+
         {formData.exercise === 'yes' && (
           <>
             <label>
               If yes, how many times per week?
-              <input type="number" name="exerciseFrequency" value={formData.exerciseFrequency} onChange={handleChange} />
+              <input
+                type="number"
+                name="exerciseFrequency"
+                value={formData.exerciseFrequency}
+                onChange={handleChange}
+              />
             </label>
             <label>
-              How many hours?
-              <input type="number" name="exerciseHours" value={formData.exerciseHours} onChange={handleChange} />
+              How many hours per week?
+              <input
+                type="number"
+                name="exerciseHours"
+                value={formData.exerciseHours}
+                onChange={handleChange}
+              />
             </label>
           </>
         )}
 
         <h2>Signature</h2>
         <label>
-          <textarea name="signature" value={formData.signature} onChange={handleChange} />
+          <textarea name="signature" value={formData.signature} onChange={handleChange} placeholder="Type your signature here" />
         </label>
 
         <button type="submit">Submit</button>

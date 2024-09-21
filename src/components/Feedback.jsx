@@ -8,7 +8,7 @@ function Feedback() {
   useEffect(() => {
     const colors = ['red', 'darkblue', 'blue', 'yellow'];
     let index = 0;
-    
+
     const interval = setInterval(() => {
       setBorderColor(colors[index]);
       index = (index + 1) % colors.length;
@@ -24,14 +24,17 @@ function Feedback() {
     const colors = ['rgb(27, 178, 243)', 'red'];
 
     function applyAnimation() {
-      animatedH2.style.transform = 'scale(1.2) rotate(5deg)';
-      animatedH2.style.opacity = '0';
-      animatedH2.style.color = colors[colorIndex];
-      colorIndex = (colorIndex + 1) % colors.length;
-      setTimeout(() => {
-        animatedH2.style.transform = 'scale(1) rotate(0deg)';
-        animatedH2.style.opacity = '1';
-      }, 500);
+      if (animatedH2) {
+        animatedH2.style.transform = 'scale(1.2) rotate(5deg)';
+        animatedH2.style.opacity = '0';
+        animatedH2.style.color = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+
+        setTimeout(() => {
+          animatedH2.style.transform = 'scale(1) rotate(0deg)';
+          animatedH2.style.opacity = '1';
+        }, 500);
+      }
     }
 
     const animationInterval = setInterval(applyAnimation, 1550);
@@ -41,11 +44,13 @@ function Feedback() {
   // Animation for form
   useEffect(() => {
     const form = document.getElementById('messageForm');
-    form.style.animation = 'colorCycle 5s linear infinite'; 
+    if (form) {
+      form.style.animation = 'colorCycle 5s linear infinite'; 
+    }
   }, []);
 
   return (
-    <section className="feedback" style={{ borderTopColor: borderColor, borderBottomColor: borderColor, borderRightColor: borderColor, borderLeftColor: borderColor }}>
+    <section className="feedback" style={{ borderTopColor: borderColor, borderBottomColor: borderColor, borderRightColor: borderColor, borderLeftColor: borderColor, borderWidth: '4px', borderStyle: 'solid' }}>
       <h2 id="animatedH2">Our Patients' Feedback</h2>
       <div className="feedback-content">
         <div className="patient-info">
@@ -57,20 +62,25 @@ function Feedback() {
         </blockquote>
       </div>
       <br />
-      <br />
       <form id="messageForm">
         <h1>LEAVE MESSAGE HERE 📖</h1>
         <br />
-       
-        NAMES:<br />
-        <input type="text" id="nameInput" placeholder="Your full name" style={{ width: '400px', height: '30px', color: 'black', padding: '10px' }} required /><br /><br />
-        EMAIL:<br />
-        <input type="text" id="emailInput" placeholder="Your email" style={{ width: '400px', height: '30px', color: 'black', padding: '10px' }} required /><br /><br />
-        Message:<br />
-        <input type="text" id="messageInput" placeholder="Enter your message ...." style={{ width: '400px', height: '100px', color: 'black', padding: '10px',marginBottom:'30px' }} required />
-       
-       
-        <button style={{ border: 'none', marginLeft: '100px', color: '#fefbfb', padding: '10px', borderRadius: '15px' }} id="sendButton">SEND</button>
+        <label>
+          NAMES:
+          <input type="text" id="nameInput" placeholder="Your full name" style={{ width: '400px', height: '30px', color: 'black', padding: '10px' }} required />
+        </label>
+        <br /><br />
+        <label>
+          EMAIL:
+          <input type="email" id="emailInput" placeholder="Your email" style={{ width: '400px', height: '30px', color: 'black', padding: '10px' }} required />
+        </label>
+        <br /><br />
+        <label>
+          Message:
+          <textarea id="messageInput" placeholder="Enter your message ...." style={{ width: '400px', height: '100px', color: 'black', padding: '10px', marginBottom: '30px' }} required />
+        </label>
+        <br />
+        <button type="submit" style={{ border: 'none', marginLeft: '100px', color: '#fefbfb', padding: '10px', borderRadius: '15px' }} id="sendButton">SEND</button>
       </form>
     </section>
   );

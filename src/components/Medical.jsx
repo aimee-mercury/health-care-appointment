@@ -4,10 +4,9 @@ import Feedback from './Feedback';
 import Imag3 from '../assets/pill1.jpg';
 import Imag from '../assets/pill2.jpg';
 
-
 function Medical() {
   return (
-    <div  id='medical'  class='app'>
+    <div id='medical' className='app'> {/* Changed 'class' to 'className' */}
       <header>
         <h1 id='kazu'>Shop for <span id='kk'>Medicines</span> & Wellness</h1>
       </header>
@@ -19,7 +18,7 @@ function Medical() {
 
               <div className="program">
                 <h2>Diabetics Care Program</h2>
-                <img id='im' src={Imag3} alt="Image 3" />
+                <img id='im' src={Imag3} alt="Diabetics Care Program" />
                 <p>Healthcare helps people maintain good health and prevent illness. Regular check-ups, vaccinations, and screenings can catch health issues early and prevent them from becoming more serious.</p>
                 <ul>
                   <li>Vitamins</li>
@@ -35,7 +34,7 @@ function Medical() {
 
               <div className="program">
                 <h2>Healthcare Programs</h2>
-                <img id='im' src={Imag} alt="Image 3" />
+                <img id='im' src={Imag} alt="Healthcare Programs" />
                 <p>Healthcare helps people maintain good health and prevent illness. Regular check-ups, vaccinations, and screenings can catch health issues early and prevent them from becoming more serious.</p>
                 <ul>
                   <li>Complete Nutrition</li>

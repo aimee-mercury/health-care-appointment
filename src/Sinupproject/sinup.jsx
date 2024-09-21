@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 import './Sinup.css';
 import image from '../assets/logo.png';
@@ -54,7 +54,7 @@ const RegisterForm = () => {
     <>
       <Navigation />
       <div className="register-container">
-      <img id="im" src={image} alt="Logo" />
+        <img id="im" src={image} alt="Logo" />
         <form className="register-form" onSubmit={handleSubmit} style={{ borderColor: borderColor }}>
           <h2>Register</h2>
           {error && <p className="error">{error}</p>}
@@ -104,7 +104,7 @@ const RegisterForm = () => {
             />
           </div>
           <button type="submit">Register</button><br /><br />
-          <p>Already have an account? <a href="/Log">Login</a></p>
+          <p>Already have an account? <Link to="/Log">Login</Link></p>
         </form>
       </div>
       <Footer />
