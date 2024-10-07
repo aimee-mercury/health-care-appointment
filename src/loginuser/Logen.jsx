@@ -35,17 +35,11 @@ const Logen = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Form submission handling
+  // Form submission handling with navigation
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { username, password } = formData;
-
-    // Basic username and password check (replace with actual authentication)
-    if (username === 'user' && password === 'pass') {
-      navigate('/H');  // Change this route to the actual one for your app
-    } else {
-      setError('Invalid username or password');
-    }
+    // Perform any other actions like saving the form data if needed
+    navigate('/H');  // Navigate to another page after form submission
   };
 
   return (

@@ -19,6 +19,7 @@ const RegisterForm = () => {
 
   const navigate = useNavigate();
 
+  // Change border color animation
   useEffect(() => {
     const colors = ['red', 'darkblue', 'blue', 'yellow'];
     let index = 0;
@@ -31,22 +32,21 @@ const RegisterForm = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     const { username, email, password, confirmPassword } = formData;
 
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
-
-    setError('');
+    // Remove any password checks or authentication logic
     setSuccess('Registration successful');
+    setError('');
+    
     setTimeout(() => navigate('/Log'), 2000); // Redirect to login page after 2 seconds
   };
 
